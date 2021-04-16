@@ -5,6 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #EDF3F7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #EDF3F7, #fff);
+  background: linear-gradient(to top, #EDF3F7, #fff);
+
 }
 
 .main {
@@ -76,7 +80,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  width: 800px;
   margin-top: 3rem;
 }
 
@@ -114,7 +118,7 @@
   height: 1em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .grid {
     width: 100%;
     flex-direction: column;
