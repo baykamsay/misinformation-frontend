@@ -1,7 +1,17 @@
+import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const router = useRouter();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(e.target[0].value);
+    // send url to middleware and await result uuid
+    router.push("/" + Math.random());
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +26,7 @@ export default function Home() {
           Analyze news articles and get a trust rating in seconds!
         </p>
 
-        <form className={styles.grid}>
+        <form className={styles.grid} onSubmit={handleSubmit}>
           <input
             className={styles.description}
             style={{ flexGrow: "2" }}
