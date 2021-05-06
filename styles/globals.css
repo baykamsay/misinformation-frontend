@@ -18,6 +18,14 @@ h3 {
     "Times New Roman", serif;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;

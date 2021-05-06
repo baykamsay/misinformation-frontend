@@ -1,7 +1,7 @@
 .container {
   max-width: 800px;
   margin: auto;
-  /* padding: 0 0.5rem; */
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +11,28 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.back {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.rating {
+  font-size: 2rem;
+}
+
+.grade {
+  font-family: "Merriweather", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  color: mediumseagreen;
+  font-size: 5rem;
+}
+
+.description {
+  color: #5e5e5e;
 }
 
 @media (max-width: 848px) {
