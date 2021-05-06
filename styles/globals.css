@@ -1,9 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
 }
 
 a {
@@ -11,30 +23,26 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 input {
   border: 0.15rem solid #000000;
-  border-radius:0.12rem;
+  border-radius: 0.12rem;
 }
 
 button {
   border: 0.15rem solid #000000;
-  margin:0 0.2rem;
-  border-radius:0.12rem;
+  margin: 0 0.2rem;
+  border-radius: 0.12rem;
   text-decoration: none;
-  color:#000000;
-  text-shadow: 0 0.04rem 0.04rem rgba(0,0,0,0.35);
-  background-color:#0070f3;
-  text-align:center;
+  color: #000000;
+  text-shadow: 0 0.04rem 0.04rem rgba(0, 0, 0, 0.35);
+  background-color: #0070f3;
+  text-align: center;
   transition: all 0.2s;
   cursor: pointer;
 }
 
 button:hover {
-  text-shadow: 0 0 2rem rgba(255,255,255,1);
-  color:#FFFFFF;
-  border-color:#FFFFFF;
+  text-shadow: 0 0 2rem rgba(255, 255, 255, 1);
+  color: #ffffff;
+  border-color: #ffffff;
 }

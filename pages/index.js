@@ -5,25 +5,26 @@ import { useState } from "react";
 import Loading from "../components/loading";
 
 export default function Home() {
-  const [showResult, setShowResult] = useState(false);
+  const [currentState, setCurrentState] = useState(0);
   const [resultData, setResultData] = useState({});
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target[0].value);
 
-    setShowResult(true);
-
-    fetch("https://baconipsum.com/api/?type=meat-and-filler")
-      .then((response) => response.json())
-      .then((data) => {
-        setResultData(data);
-      });
+    setCurrentState(1);
+    window.setTimeout(() => {
+      fetch("https://baconipsum.com/api/?type=meat-and-filler")
+        .then((response) => response.json())
+        .then((data) => {
+          setResultData(data);
+          setCurrentState(2);
+        });
+    }, 1000);
   }
 
   function handleBack() {
+    setCurrentState(0);
     setResultData({});
-    setShowResult(false);
   }
 
   return (
@@ -33,11 +34,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {showResult == false && <Search onSubmit={handleSubmit} />}
-      {showResult == true && resultData == {} && <Loading />}
-      {showResult == true && resultData != {} && (
-        <Result data={resultData} onBack={handleBack} />
-      )}
+      {currentState === 0 && <Search onSubmit={handleSubmit} />}
+      {currentState === 1 && <Loading />}
+      {currentState === 2 && <Result data={resultData} onBack={handleBack} />}
     </div>
   );
 }
