@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-export default function Search() {
+export default function Search(props) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -10,7 +10,7 @@ export default function Search() {
           Analyze news articles and get a trust rating in seconds!
         </p>
 
-        <form className={styles.grid}>
+        <form className={styles.grid} onSubmit={props.onSubmit}>
           <input
             className={styles.description}
             style={{ flexGrow: "2" }}

@@ -1,11 +1,11 @@
 import styles from "../styles/Results.module.css";
 
-export default function Result() {
+export default function Result(props) {
   return (
     <div className={styles.container}>
       <main>
         <div className={styles.nav}>
-          <button>Back</button>
+          <button onClick={props.onBack}>Back</button>
           <span>
             Trust Rating: <span>92</span>
           </span>
