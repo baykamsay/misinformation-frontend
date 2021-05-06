@@ -1,10 +1,6 @@
-import { useRouter } from "next/router";
 import styles from "../styles/Results.module.css";
 
-export default function Results() {
-  const router = useRouter();
-  const { id } = router.query;
-
+export default function Result() {
   return (
     <div className={styles.container}>
       <main>

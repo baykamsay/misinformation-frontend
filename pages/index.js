@@ -1,54 +1,17 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Search from "../components/search";
+import Result from "../components/result";
 
 export default function Home() {
-  const router = useRouter();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(e.target[0].value);
-    // send url to middleware and await result uuid
-    router.push("/" + Math.random());
-  }
-
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Fact Fix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Fact Fix</h1>
-
-        <p className={styles.description}>
-          Analyze news articles and get a trust rating in seconds!
-        </p>
-
-        <form className={styles.grid} onSubmit={handleSubmit}>
-          <input
-            className={styles.description}
-            style={{ flexGrow: "2" }}
-            type="text"
-            placeholder="Enter article URL"
-          />
-          <button className={styles.description} type="submit">
-            Analyze
-          </button>
-        </form>
-      </main>
-
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer> */}
+      <Search />
+      {/* <Result /> */}
     </div>
   );
 }
