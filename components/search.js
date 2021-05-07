@@ -12,12 +12,12 @@ export default function Search(props) {
 
         <form className={styles.grid} onSubmit={props.onSubmit}>
           <input
-            className={styles.description}
+            className={styles.input}
             style={{ flexGrow: "2" }}
             type="text"
             placeholder="Enter article URL"
           />
-          <button className={styles.description} type="submit">
+          <button className={styles.button} type="submit">
             Analyze
           </button>
         </form>
