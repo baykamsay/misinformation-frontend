@@ -8,18 +8,28 @@ export default function Home() {
   const [currentState, setCurrentState] = useState(0);
   const [resultData, setResultData] = useState({});
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     setCurrentState(1);
-    window.setTimeout(() => {
-      fetch("https://baconipsum.com/api/?type=meat-and-filler")
-        .then((response) => response.json())
-        .then((data) => {
-          setResultData(data);
-          setCurrentState(2);
-        });
-    }, 1000);
+
+    const url = { url: e.target[0].value };
+
+    const response = await fetch("localhost:8080/api/v1/analyse", {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(url),
+    });
+
+    setResultData(await response.json());
+    setCurrentState(2);
   }
 
   function handleBack() {
