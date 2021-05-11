@@ -15,7 +15,7 @@ export default function Home() {
 
     const url = { url: e.target[0].value };
 
-    const response = await fetch("localhost:8080/api/v1/analyse", {
+    const response = await fetch("http://localhost:8080/api/v1/analyse", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
